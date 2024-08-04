@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* .body{
+    background: url('img.jpg') no-repeat center ;
+} */
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg ,rgb(0 0 0),rgb(236, 5, 5));
+    position: relative;
+}
+ .container .box{
+    position: absolute;
+    width: 350px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    background-color:rgba(0, 0,0, 0.5);
+    padding: 25px 25px 45px 25px ;
+    border-radius: 20px;
+    /* background: transparent; */
+    
+}
+h2{
+    text-align: center;
+    font-size: 44px;
+    margin-bottom: 30px;
+    position: relative;
+    color: antiquewhite;
+}
+h2::before{
+    position: absolute;
+    content: " ";
+    width: 90px ;
+    height: 5px;
+    border-radius: 50px;
+    background: linear-gradient(45deg ,rgb(21, 1, 1),rgb(236, 5, 5));
+    bottom: -8px;
+}
+.box .input_box{
+    width: 100% ;
+    position: relative;
+
+}
+.box .input_box input[type = "text" ]{
+    width: 100%;
+    font-size: 20px;
+    margin: 16px 0px;
+    outline: none;
+    border-radius: 6px;
+    border-width: 0px 0px 2px 0px  ;
+    /* border-color: rgba(0, 0,0, 0.5); ` */
+    /* background-color: rgba(0, 0,0, 0.5); */
+    /* color: white; */
+    height: 35px;
+    
+}
+.box .input_box input[type = "password" ]{
+    width: 100%;
+    font-size: 20px;
+    margin: 16px 0px;
+    outline: none;
+    border-width: 0px 0px 2px 0px  ;
+    border-radius: 6px;
+    /* background-color: rgba(0, 0,0, 0.5); */
+    /* border-color: rgba(0, 0,0, 0.5); */
+    /* color: white; */
+    height: 35px;
+
+}
+.box .input_box input[type = "email" ]{
+    width: 100%;
+    font-size: 20px;
+    margin: 16px 0px;
+    outline: none;
+    height: 35px;
+    border-radius: 6px;
+    
+    /* color: white; */
+    border-width: 0px 0px 2px 0px  ;
+    /* border-color:rgba(0, 0,0, 0.5); */
+    /* background-color: rgba(0, 0,0, 0.5); */
+}
+.box .input_box label{
+    position: absolute;
+    left: 0px;
+    top: px; 
+    font-size: 20px;
+    color:black;
+    pointer-events: none;
+    /* transition: 0.2s; */
+}
+.box .input_box input:focus + label,
+.box .input_box input:valid + label{
+    top: -10px;
+    font-size: 18px;
+    color:whitesmoke;
+
+}
+.box .input_box .password_checkbox {
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    color: whitesmoke;
+}
+.box .input_box .password_checkbox p{
+    margin-left: 8px;
+}
+
+.box .signup_button{
+    width: 100%;
+    background: linear-gradient(45deg ,rgb(0 0 0),rgb(236, 5, 5));
+    padding: 10px 16px;
+    margin-top: 30px ;
+    font-size: 20px;
+    color: antiquewhite;
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+.box .signup_button:active{
+    transform: scale3d(0.9,0.9,0.9);
+}
+
+.box .login_link{
+    font-size: 20px;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.box .login_link a{
+    color: black;
+    text-decoration: none;
+}
+.box .login_link a:hover{
+    text-decoration: underline;
+    text-underline-position: under;
+}

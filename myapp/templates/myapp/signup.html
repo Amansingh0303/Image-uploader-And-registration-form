@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <title>signup</title>
+</head>
+<body>
+    <div class="container-fluid  bg-dark ">
+        {% include 'myapp/navbar.html' %}
+    
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <p  {% if message.tags %}  class="alert alert-{{message.tags}} md-5" {% endif %}> {{message}} </p>
+    {% endfor %}
+    {% endif %}
+    <div class="container" >
+        <div class="box">
+            <h2 style="color: antiquewhite;"> Signup </h2>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <div class="input_box">
+                    <input type="text" class="name" name="username" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="input_box">
+                    <input type="text"  name="name" class="name" required>
+                    <label for="" >First name</label>
+                </div>
+                <div class="input_box">
+                    <input type="text"  name="lastname" class="name" required>
+                    <label for="">Last name</label>
+                </div>
+                <div class="input_box">
+                    <input type="email" name="email"  class="email" required>
+                    <label for="">Email</label>
+                   
+                </div>
+                <div class="input_box">
+                    <input type="password" name="password" class="password" required>
+                    <label for="">Password</label>                   
+                </div>
+                <div class="input_box">
+                    <input type="password" name="passwords" class="password" required>
+                    <label for="">Confirm Password  </label>                   
+                </div>
+                <button class="signup_button" type="submit" > Create Account </button>
+                <div class="login_link"><a href="{% url 'login' %}" class="text-white"> Aready have an Account / Login </a></div>
+               
+            </form>
+        </div>
+    </div>
+    <script src="{% static  'mayapp/js/jquery.js' %}"></script>
+    <script src="{% static  'myapp/js/popper.js' %}"></script>
+    <script src="{% static  'myapp/js/bootstrap.js' %}"></script>
+</body>
+</html>

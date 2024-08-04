@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-fluid  bg-dark ">
+        {% include 'myapp/navbar.html' %}
+    
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <p  {% if message.tags %}  class="alert alert-{{message.tags}} md-5" {% endif %}> {{message}} </p>
+    {% endfor %}
+    {% endif %}
+    <div class="container" >
+        <div class="box">
+            <h2 style="color: antiquewhite;"> Login </h2>
+            <form action=" {% url 'login' %} " method="POST">
+                {% csrf_token %}
+                <div class="input_box">
+                    <input type="text" class="name" required name="Username" >
+                    <label for="">Username</label>
+                </div>
+              
+                <div class="input_box">
+                    <input type="password" class="password" required name="password" >
+                    <label for="">Password</label>
+                </div>
+
+                <!-- <div class="forgot_password   " > <a href="{% url 'forgot' %}"> Forgot Password </a> </div> -->
+
+                <button class="login_button" type="submit" >Login </button>
+                <div class="login_link"><a href=" {% url 'signup' %} " style="color: aliceblue;"> Don't have an Account / Signup </a></div>
+               
+            </form>
+        </div>
+    </div>
+    {% block content %}
+    
+    <script src="{% static  'mayapp/js/jquery.js' %}"></script>
+    <script src="{% static  'myapp/js/popper.js' %}"></script>
+    <script src="{% static  'myapp/js/bootstrap.js' %}"></script>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+.nav-brand h1{
+    font-size: 50px;
+    color: yellow;
+    transition: font-size 2s , color 2s;
+}
+.nav-brand h1:hover{
+    font-size: 60px;
+    color: brown;
+}
+.container-fluid{
+    background: linear-gradient(45deg rgb(0 0 0) rgb(252, 196, 14));
+    position: sticky;
+    top:0
+}
+.msg.warning{
+    color: red; 
+}
+.msg.success{
+    color: green;
+}
+ul li a:hover{
+    background: green;
+    font-size: 20px;
+    transition: 0.5s;
+    border-radius: 30px;
+
+}
+ul li a:active{
+    background: green ;
+    font-size: 20px;
+
+}
